@@ -6,4 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'DB' => $baseDir . '/App/model/DB.class.php',
+    'DatabaseOperate' => $baseDir . '/App/model/DatabaseOperate.class.php',
 );

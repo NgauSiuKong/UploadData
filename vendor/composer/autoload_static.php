@@ -12,6 +12,7 @@ class ComposerStaticInite18b012fe68eba56e46a1f2399b10ffb
         '22d287673fb05a9ac9f86bf3b35680f2' => __DIR__ . '/..' . '/appbolaget/dd/src/dd.php',
         'c54c1e352893e3d8c94af4f1df1cd8f3' => __DIR__ . '/..' . '/appbolaget/dd/src/Dumper.php',
         'a5678475996ced6f4774ffdad364dba4' => __DIR__ . '/..' . '/appbolaget/dd/src/HtmlDumper.php',
+        '8bac141af83086b140ccc81e24e178ea' => __DIR__ . '/../..' . '/App/functions/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -19,6 +20,10 @@ class ComposerStaticInite18b012fe68eba56e46a1f2399b10ffb
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
+        ),
+        'A' => 
+        array (
+            'App\\' => 4,
         ),
     );
 
@@ -30,6 +35,10 @@ class ComposerStaticInite18b012fe68eba56e46a1f2399b10ffb
         'Symfony\\Component\\VarDumper\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/App',
         ),
     );
 
@@ -43,12 +52,18 @@ class ComposerStaticInite18b012fe68eba56e46a1f2399b10ffb
         ),
     );
 
+    public static $classMap = array (
+        'DB' => __DIR__ . '/../..' . '/App/model/DB.class.php',
+        'DatabaseOperate' => __DIR__ . '/../..' . '/App/model/DatabaseOperate.class.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInite18b012fe68eba56e46a1f2399b10ffb::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInite18b012fe68eba56e46a1f2399b10ffb::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInite18b012fe68eba56e46a1f2399b10ffb::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInite18b012fe68eba56e46a1f2399b10ffb::$classMap;
 
         }, null, ClassLoader::class);
     }
