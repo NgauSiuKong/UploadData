@@ -34,6 +34,7 @@ namespace App\operate_excel;
             foreach($this->PHPExcelObj->getWorksheetIterator() as $key_sheet => $sheet){
                 //遍历的每一个sheet逐行读取
                 foreach($sheet->getRowIterator() as $key_line => $row){
+                    //如果excel有头部，可跳过。如果
                     if($row->getRowIndex() == 1){
                         continue;
                     }

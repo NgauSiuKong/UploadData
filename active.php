@@ -4,9 +4,9 @@ $file = "./file/data.xlsx";
 $PHPExcelObj = PHPExcel_IOFactory::load($file);
 use App\operate_excel\operate_excel;
 $oprtObj = operate_excel::getoprtObj($PHPExcelObj);
-//$res = $oprtObj->readlineExcel();
-$res = file($file);
-dump($res);
+$res = $oprtObj->readlineExcel();
+echo "<pre>";
+print_r($res);
 
 
 
